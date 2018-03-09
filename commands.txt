@@ -1,0 +1,191 @@
+
+161142@lab200ab-ws28 MINGW64 ~
+$ cd C:
+
+161142@lab200ab-ws28 MINGW64 /c
+$ cd Users
+
+161142@lab200ab-ws28 MINGW64 /c/Users
+$ cd 161142
+
+161142@lab200ab-ws28 MINGW64 ~
+$ cd Desktop
+
+161142@lab200ab-ws28 MINGW64 ~/Desktop
+$ mkdir lab1
+
+161142@lab200ab-ws28 MINGW64 ~/Desktop
+$ cd lab1
+
+161142@lab200ab-ws28 MINGW64 ~/Desktop/lab1
+$ git config --global user.name"kate"
+
+161142@lab200ab-ws28 MINGW64 ~/Desktop/lab1
+$ git config --global user.email kateilievsk@gmail.com
+
+161142@lab200ab-ws28 MINGW64 ~/Desktop/lab1
+$ git init
+Initialized empty Git rep
+Initialized empty Git repository in C:/Users/161142/Desktop/lab1/.git/
+
+161142@lab200ab-ws28 MINGW64 ~/Desktop/lab1 (master)
+$ ^C
+
+161142@lab200ab-ws28 MINGW64 ~/Desktop/lab1 (master)
+$ NOTEPAD l1.txt
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        l1.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+161142@lab200ab-ws28 MINGW64 ~/Desktop/lab1 (master)
+$ git add l1.txt
+
+161142@lab200ab-ws28 MINGW64 ~/Desktop/lab1 (master)
+161142@lab200ab-ws28 MINGW64 ~/Desktop/lab1 (master)
+$ git commit -m"initial commit"
+[master (root-commit) 0385d10] initial commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 l1.txt
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   l1.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+161142@lab200ab-ws28 MINGW64 ~/Desktop/lab1 (master)
+$ git add l1.txt
+
+161142@lab200ab-ws28 MINGW64 ~/Desktop/lab1 (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        modified:   l1.txt
+161142@lab200ab-ws28 MINGW64 ~/Desktop/lab1 (master)
+$ git commit -m"modify l1.txt"
+[master ab590a8] modify l1.txt
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+161142@lab200ab-ws28 MINGW64 ~/Desktop/lab1 (master)
+$ git remote add origin https://github.com/kilievska/new.git
+
+161142@lab200ab-ws28 MINGW64 ~/Desktop/lab1 (master)
+$ git push -u origin master
+
+Counting objects: 6, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (6/6), 467 bytes | 93.00 KiB/s, done.
+Total 6 (delta 0), reused 0 (delta 0)
+To https://github.com/kilievska/new.git
+ * [new branch]      master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   l1.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+161142@lab200ab-ws28 MINGW64 ~/Desktop/lab1 (master)
+$ git checkout -- l1.txt
+
+161142@lab200ab-ws28 MINGW64 ~/Desktop/lab1 (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+161142@lab200ab-ws28 MINGW64 ~/Desktop/lab1 (master)
+$ git branch loggin
+161142@lab200ab-ws28 MINGW64 ~/Desktop/lab1 (master)
+$ git checkout loggin
+Switched to branch 'loggin'
+$ git log
+commit ab590a8306d494551a4c74b158a85ab4f5256518 (HEAD -> loggin, origin/master, master)
+Author: Your Name <you@example.com>
+Date:   Fri Mar 9 15:54:19 2018 +0100
+
+    modify l1.txt
+
+commit 0385d1064d01aa5a92c350c989127ad360ded884
+Author: Your Name <you@example.com>
+Date:   Fri Mar 9 15:50:54 2018 +0100
+
+    initial commit
+
+161142@lab200ab-ws28 MINGW64 ~/Desktop/lab1 (loggin)
+$ git status
+On branch loggin
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        log.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+$ git add log.txt
+
+161142@lab200ab-ws28 MINGW64 ~/Desktop/lab1 (loggin)
+$ git commit -m"added log.txt"
+[loggin c08b054] added log.txt
+ 1 file changed, 11 insertions(+)
+ create mode 100644 log.txt
+161142@lab200ab-ws28 MINGW64 ~/Desktop/lab1 (loggin)
+$ git push -u origin loggin
+Counting objects: 3, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 474 bytes | 94.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/kilievska/new.git
+ * [new branch]      loggin -> loggin
+Branch 'loggin' set up to track remote branch 'loggin' from 'origin'.
+161142@lab200ab-ws28 MINGW64 ~/Desktop/lab1 (loggin)
+$ git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+161142@lab200ab-ws28 MINGW64 ~/Desktop/lab1 (master)
+$ git merge loggin
+Updating ab590a8..c08b054
+Fast-forward
+ log.txt | 11 +++++++++++
+ 1 file changed, 11 insertions(+)
+ create mode 100644 log.txt
+$ git push -u origin master
+Total 0 (delta 0), reused 0 (delta 0)
+To https://github.com/kilievska/new.git
+   ab590a8..c08b054  master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+161142@lab200ab-ws28 MINGW64 ~/Desktop/lab1 (master)
+$ git branch allcomands
+
+161142@lab200ab-ws28 MINGW64 ~/Desktop/lab1 (master)
+$ git checkout allcomands
+Switched to branch 'allcomands'
+
+161142@lab200ab-ws28 MINGW64 ~/Desktop/lab1 (allcomands)
+$ NOTEPAD commands.txt
+$ git status
+On branch allcomands
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        commands.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
